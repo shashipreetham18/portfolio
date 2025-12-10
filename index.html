@@ -20,15 +20,14 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background: #0f172a;
       color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
+
     a { color: inherit; text-decoration: none; }
 
-    /* Particles and floating backgrounds */
+    /* Particles & shapes */
     #particles-js { position: fixed; inset: 0; z-index: -2; background: #0f172a; }
-    .floating-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .floating-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
     .shape {
       position: absolute;
       border-radius: 50%;
@@ -36,9 +35,9 @@
       background: linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6);
       background-size: 300% 300%;
       filter: blur(36px);
-      transform-origin: center;
       animation: gradientShift 10s linear infinite;
     }
+
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -62,467 +61,275 @@
       background: linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
+
     .nav-links { display:flex; gap:18px; align-items:center; }
-    .nav-links a { color: #e6eef8; font-weight:600; padding:6px 4px; position:relative; }
-    .nav-links a::after { content:""; position:absolute; bottom:-6px; left:0; height:2px; width:0; background:linear-gradient(90deg,#06b6d4,#3b82f6); transition:width .28s; }
+    .nav-links a { font-weight:600; position:relative; }
+    .nav-links a::after {
+      content:""; position:absolute; bottom:-6px; left:0; height:2px; width:0;
+      background:linear-gradient(90deg,#06b6d4,#3b82f6);
+      transition:width .28s;
+    }
     .nav-links a:hover::after{ width:100%; }
-    .resume-btn { padding:8px 12px; border-radius:8px; background:linear-gradient(90deg,#06b6d4,#3b82f6); color:#fff; font-weight:700; }
+
+    .resume-btn {
+      padding:8px 12px; border-radius:8px;
+      background:linear-gradient(90deg,#06b6d4,#3b82f6);
+      color:#fff; font-weight:700;
+    }
 
     /* HERO */
-    .hero { position: relative; min-height:86vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:68px 0; }
-    .hero-inner { max-width:900px; padding:20px; }
-    .hero-title { font-size:2.6rem; font-weight:800; line-height:1.02; margin-bottom:8px; }
+    .hero { min-height:86vh; display:flex; align-items:center; text-align:center; padding:68px 0; }
+    .hero-title { font-size:2.6rem; font-weight:800; }
     .hero-title span {
       background: linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-      text-shadow: 0 8px 30px rgba(56,189,248,0.18), 0 18px 60px rgba(139,92,246,0.08);
     }
-    .typewriter { font-size:1.15rem; color:#8ed6ff; height:30px; margin-bottom:12px; font-weight:600; }
-    .cursor { display:inline-block; margin-left:4px; opacity:1; animation: blink .75s infinite; }
+
+    .typewriter { font-size:1.15rem; margin-bottom:12px; font-weight:600; color:#8ed6ff; }
+    .cursor { animation: blink .75s infinite; }
     @keyframes blink { 50% { opacity:0; } }
 
-    .hero-sub { color:#cfeafc; font-size:1rem; max-width:60ch; margin: 12px auto; }
-    .hero-ctas { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .hero-sub { font-size:1rem; color:#cfeafc; max-width:60ch; margin:auto; }
 
+    .hero-ctas { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
     .btn {
-      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px;
-      font-weight:700; cursor:pointer; transition: transform .22s, box-shadow .22s;
+      padding:10px 14px; border-radius:10px; font-weight:700;
+      display:flex; align-items:center; gap:8px; cursor:pointer;
     }
-    .btn-primary { background:linear-gradient(90deg,#06b6d4,#3b82f6); color:white; box-shadow:0 10px 30px rgba(3,169,244,0.12); }
-    .btn-outline { color:#8ed6ff; border:2px solid rgba(14,165,233,0.12); background:transparent; }
+    .btn-primary { background:linear-gradient(90deg,#06b6d4,#3b82f6); color:white; }
+    .btn-outline { border:2px solid rgba(14,165,233,0.12); color:#8ed6ff; }
     .btn-resume { background:linear-gradient(90deg,#3b82f6,#8b5cf6); color:white; }
 
-    .btn:hover{ transform:translateY(-4px); box-shadow:0 18px 50px rgba(2,132,199,0.12); }
-
-    /* SECTIONS */
+    /* Sections */
     .section { padding:52px 0; }
     .section-title {
-      font-size:1.9rem; text-align:center; margin-bottom:22px; font-weight:800;
-      background: linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);
+      text-align:center; margin-bottom:22px;
+      background:linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-      text-shadow: 0 6px 24px rgba(56,189,248,0.12);
+      font-weight:800; font-size:1.9rem;
     }
 
     /* Projects */
     .projects-grid {
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
       gap:18px;
     }
 
     .project-card {
-      position:relative;
-      background: linear-gradient(180deg, rgba(20,28,45,0.85), rgba(10,16,28,0.78));
+      background:linear-gradient(180deg, rgba(20,28,45,0.85), rgba(10,16,28,0.78));
       border-radius:14px;
       padding:14px;
-      overflow:hidden;
       cursor:pointer;
-      transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
       display:flex;
       flex-direction:column;
+      overflow:hidden;
       min-height:260px;
-      z-index:1;
+      transition:all .3s ease;
+      position:relative;
     }
-
-    /* spotlight radial glow */
-    .project-card::before {
-      content:""; position:absolute; inset:-50%;
-      background: radial-gradient(circle at center, rgba(56,189,248,0.12) 0%, transparent 60%);
-      transform: scale(0);
-      transition: transform .45s cubic-bezier(.2,.9,.2,1);
-      z-index:0;
-    }
-    .project-card .content { position:relative; z-index:1; }
 
     .project-card img {
-      width:100%; height:150px; object-fit:cover; border-radius:10px; display:block; margin-bottom:10px; transition: transform .45s ease;
+      width:100%; height:150px;
+      object-fit:cover; border-radius:10px;
     }
 
-    .project-card h3 { color:#bff0ff; margin-bottom:6px; font-size:1.05rem; }
-    .project-card p { color:#d3eafc; font-size:0.92rem; margin-bottom:8px; line-height:1.35; }
+    .project-card h3 { margin:8px 0 6px; color:#bff0ff; font-size:1.05rem; }
+    .project-card p { font-size:.92rem; color:#d3eafc; margin-bottom:6px; }
+
     .tech-stack { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
-
     .tech-stack span {
-      background: rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.03);
-      padding:6px 8px; border-radius:8px; color:#dbeffc; font-weight:600; font-size:0.78rem;
-      transform: translateY(6px); opacity:0;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.03);
+      padding:6px 8px; border-radius:8px; font-size:.78rem;
     }
 
-    .project-card .btn-row { margin-top:10px; display:flex; gap:10px; align-items:center; }
-
-    /* Hover spotlight + dim others */
-    .project-card.hovered { transform: translateY(-10px) scale(1.03); box-shadow: 0 24px 60px rgba(2,132,199,0.14); }
-    .project-card.hovered img { transform: scale(1.07); }
-    .project-card.hovered::before { transform: scale(1); }
-
-    .project-card.dimmed { filter: blur(2px) brightness(.75); pointer-events:none; }
-
-    /* Skills */
-    .skills-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
-    .skill-card { background: linear-gradient(180deg, rgba(20,28,45,0.7), rgba(6,12,20,0.45)); padding:14px; border-radius:12px; }
-    .skill-card h4 { color:#bff0ff; margin-bottom:10px; font-size:1rem; }
-    .progress { height:10px; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden; }
-    .progress > i { display:block; height:100%; width:0%; background: linear-gradient(90deg,#06b6d4,#3b82f6); border-radius:inherit; }
-
-    /* contact */
-    .contact .info { text-align:center; color:#cfeafc; }
-
-    /* back to top */
-    #back-to-top { position:fixed; right:20px; bottom:20px; z-index:120; display:none;
-      width:44px; height:44px; border-radius:12px; align-items:center; justify-content:center;
-      background: linear-gradient(90deg,#06b6d4,#3b82f6); color:#fff; font-weight:800; cursor:pointer;
-      box-shadow:0 10px 30px rgba(3,169,244,0.12); border:none;
-    }
-
-    /* responsive */
-    @media (max-width:720px){
-      .hero-title { font-size:1.9rem; }
-      .project-card img { height:140px; }
-    }
+    .btn-row { margin-top:10px; display:flex; }
   </style>
 </head>
+
 <body>
 
-  <!-- Particles & floating shapes -->
-  <div id="particles-js"></div>
-  <div class="floating-bg" aria-hidden="true">
-    <div class="shape" style="top:8%; left:6%; width:160px; height:160px;"></div>
-    <div class="shape" style="top:60%; left:84%; width:200px; height:200px; opacity:0.18;"></div>
-    <div class="shape" style="top:38%; left:50%; width:100px; height:100px; opacity:0.2;"></div>
+<!-- Particles -->
+<div id="particles-js"></div>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <div class="brand">Shashi Preetham</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="resume-btn" href="Resume.pdf" target="_blank">Resume</a>
+    </div>
   </div>
+</nav>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <div class="brand">Shashi Preetham</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a class="resume-btn" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-      </div>
+<!-- HERO -->
+<header id="about" class="hero">
+  <div class="container">
+    <div class="hero-title">Hi, I'm <span>Shashi Preetham</span></div>
+
+    <div class="typewriter"><span id="typed-text"></span><span class="cursor">|</span></div>
+
+    <p class="hero-sub">
+      I design scalable full-stack applications ✨ and build robust machine-learning models 🤖.
+    </p>
+
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#projects">🔗 View My Work</a>
+      <a class="btn btn-outline" href="#contact">✉️ Contact Me</a>
+      <a class="btn btn-resume" href="Resume.pdf" target="_blank">📄 Resume</a>
     </div>
-  </nav>
+  </div>
+</header>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
 
-  <!-- HERO -->
-  <header id="about" class="hero">
-    <div class="hero-inner container">
-      <div class="hero-content">
-        <div class="hero-title">Hi, I'm <span>Shashi Preetham</span></div>
+    <div class="projects-grid" id="projects-grid">
 
-        <div class="typewriter">
-          <span id="typed-text" aria-hidden="true"></span><span class="cursor" aria-hidden="true">|</span>
+      <!-- Drone -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/drone_project">
+        <img src="images/drone.jpg" alt="Drone Project screenshot" />
+        <h3>Drone Project</h3>
+        <p><strong>Problem:</strong> Manual drone navigation is inefficient and error-prone.</p>
+        <p><strong>Solution:</strong> Autonomous drone built using Python, ROS & OpenCV.</p>
+        <div class="tech-stack"><span>Python</span><span>ROS</span><span>OpenCV</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/drone_project" target="_blank">View Code</a>
         </div>
+      </article>
 
-        <p class="hero-sub">
-          I design scalable full-stack applications ✨ and build robust machine-learning models 🤖.
-          I focus on practical solutions, clean code, and delightful user experiences that solve real problems.
-        </p>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#projects">🔗 View My Work</a>
-          <a class="btn btn-outline" href="#contact">✉️ Contact Me</a>
-          <a class="btn btn-resume" href="Resume.pdf" target="_blank" rel="noreferrer">📄 Resume</a>
+      <!-- Medical ChatBot -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/Medical-Chat-Bot">
+        <img src="images/medical_chatbot.png" alt="Medical ChatBot screenshot" />
+        <h3>Medical Chat Bot</h3>
+        <p><strong>Problem:</strong> People need quick, reliable first-level medical support.</p>
+        <p><strong>Solution:</strong> NLP chatbot using Python + Flask.</p>
+        <div class="tech-stack"><span>Python</span><span>NLP</span><span>Flask</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/Medical-Chat-Bot" target="_blank">View Code</a>
         </div>
-      </div>
-    </div>
-  </header>
+      </article>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects-grid" id="projects-grid">
-        <!-- Drone -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/drone_project">
-          <div class="content">
-            <img src="images/drone.jpg" alt="Drone Project screenshot" />
-            <h3>Drone Project</h3>
-            <p><strong>Problem:</strong> Manual drone navigation is inefficient and error-prone for surveillance and delivery tasks.</p>
-            <p><strong>Solution:</strong> Built an autonomous drone system using Python, ROS and OpenCV for path detection and obstacle avoidance.</p>
-            <div class="tech-stack"><span>Python</span><span>ROS</span><span>OpenCV</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/drone_project" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Medical Chat Bot -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Medical-Chat-Bot">
-          <div class="content">
-            <img src="images/medical_chatbot.png" alt="Medical Chat Bot screenshot" />
-            <h3>Medical Chat Bot</h3>
-            <p><strong>Problem:</strong> People need quick, reliable medical guidance outside hospitals.</p>
-            <p><strong>Solution:</strong> Developed an NLP-based chatbot with Flask that answers common healthcare queries and suggests actions.</p>
-            <div class="tech-stack"><span>Python</span><span>NLP</span><span>Flask</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Medical-Chat-Bot" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Swiggy Automation -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/SwiggyAutomation">
-          <div class="content">
-            <img src="images/swiggy.png" alt="Swiggy Automation screenshot" />
-            <h3>Swiggy Automation</h3>
-            <p><strong>Problem:</strong> Running repetitive manual tests for delivery workflows is slow and brittle.</p>
-            <p><strong>Solution:</strong> Automated end-to-end delivery scenarios using Selenium + Python for reliable testing and demos.</p>
-            <div class="tech-stack"><span>Python</span><span>Selenium</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/SwiggyAutomation" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Synkro -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Synkro">
-          <div class="content">
-            <img src="images/synkro.png" alt="Synkro screenshot" />
-            <h3>Synkro</h3>
-            <p><strong>Problem:</strong> Distributed teams lack a single lightweight tool for instant collaboration.</p>
-            <p><strong>Solution:</strong> Built a real-time collaboration app using React, Node.js and Socket.io for instant messaging & channels.</p>
-            <div class="tech-stack"><span>React</span><span>Node.js</span><span>Socket.io</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Synkro" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Anomaly Transformer -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Anomaly-Transformer">
-          <div class="content">
-            <img src="images/anomaly.png" alt="Anomaly Transformer screenshot" />
-            <h3>Anomaly Transformer</h3>
-            <p><strong>Problem:</strong> Detecting subtle anomalies in time-series data is difficult with classic methods.</p>
-            <p><strong>Solution:</strong> Implemented an anomaly detection model using Transformer-based architecture in PyTorch to flag irregular patterns.</p>
-            <div class="tech-stack"><span>PyTorch</span><span>Deep Learning</span><span>ML</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Stock using DRL (NEW) -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Stock-using-DRL">
-          <div class="content">
-            <img src="images/stock_drl.jpeg" alt="Stock using DRL screenshot" />
-            <h3>Stock using DRL</h3>
-            <p><strong>Problem:</strong> Building automated trading strategies that adapt to noisy market time-series.</p>
-            <p><strong>Solution:</strong> Developed a Deep Reinforcement Learning pipeline in Python to train agents for automated stock trading; includes data preprocessing, custom OpenAI‑Gym-style environment, training scripts, and evaluation utilities.</p>
-            <div class="tech-stack"><span>Python</span><span>Reinforcement Learning</span><span>DRL</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Programming Languages</h4>
-          <div class="skill"><strong>Python</strong><div class="progress" aria-hidden="true"><i data-skill="90"></i></div></div>
-          <div class="skill"><strong>C</strong><div class="progress"><i data-skill="70"></i></div></div>
-          <div class="skill"><strong>Java</strong><div class="progress"><i data-skill="75"></i></div></div>
-          <div class="skill"><strong>JavaScript</strong><div class="progress"><i data-skill="70"></i></div></div>
+      <!-- Swiggy Automation -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/SwiggyAutomation">
+        <img src="images/swiggy.png" alt="Swiggy Automation screenshot" />
+        <h3>Swiggy Automation</h3>
+        <p><strong>Problem:</strong> Manual testing of delivery workflows is slow.</p>
+        <p><strong>Solution:</strong> Selenium automation for Swiggy flows.</p>
+        <div class="tech-stack"><span>Python</span><span>Selenium</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/SwiggyAutomation" target="_blank">View Code</a>
         </div>
+      </article>
 
-        <div class="skill-card">
-          <h4>Web & Tools</h4>
-          <div class="skill"><strong>HTML5</strong><div class="progress"><i data-skill="95"></i></div></div>
-          <div class="skill"><strong>CSS3</strong><div class="progress"><i data-skill="90"></i></div></div>
-          <div class="skill"><strong>React</strong><div class="progress"><i data-skill="70"></i></div></div>
-          <div class="skill"><strong>REST APIs</strong><div class="progress"><i data-skill="65"></i></div></div>
+      <!-- Synkro -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/Synkro">
+        <img src="images/synkro.png" alt="Synkro screenshot" />
+        <h3>Synkro</h3>
+        <p><strong>Problem:</strong> Teams need lightweight real-time collaboration.</p>
+        <p><strong>Solution:</strong> React + Node.js + Socket.io chat system.</p>
+        <div class="tech-stack"><span>React</span><span>Node.js</span><span>Socket.io</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/Synkro" target="_blank">View Code</a>
         </div>
+      </article>
+
+      <!-- Anomaly Transformer -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/Anomaly-Transformer">
+        <img src="images/anomaly.png" alt="Anomaly Transformer screenshot" />
+        <h3>Anomaly Transformer</h3>
+        <p><strong>Problem:</strong> Traditional ML struggles with subtle pattern anomalies.</p>
+        <p><strong>Solution:</strong> Transformer-based anomaly detector in PyTorch.</p>
+        <div class="tech-stack"><span>PyTorch</span><span>Deep Learning</span><span>ML</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank">View Code</a>
+        </div>
+      </article>
+
+      <!-- ⭐ NEW: Stock Using DRL -->
+      <article class="project-card" data-link="https://github.com/shashipreetham18/Stock-using-DRL">
+        <img src="images/stock_drl.png" alt="Stock using DRL screenshot" />
+        <h3>Stock Using DRL</h3>
+        <p><strong>Problem:</strong> Hard to build adaptive trading strategies using noisy time-series.</p>
+        <p><strong>Solution:</strong> Deep Reinforcement Learning agent with custom environment + training loop.</p>
+        <div class="tech-stack"><span>Python</span><span>DRL</span><span>Reinforcement Learning</span></div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank">View Code</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Programming Languages</h4>
+        <p>Python</p>
+        <p>C</p>
+        <p>Java</p>
+        <p>JavaScript</p>
+      </div>
+
+      <div class="skill-card">
+        <h4>Web & Tools</h4>
+        <p>HTML5</p>
+        <p>CSS3</p>
+        <p>React</p>
+        <p>REST APIs</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container contact">
-      <h2 class="section-title">Contact</h2>
-      <div class="info">
-        <p>Email: <a href="mailto:shashipreetham1804@gmail.com">shashipreetham1804@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/shashi-preetham18/" target="_blank" rel="noreferrer">linkedin.com/in/shashi-preetham18</a></p>
-      </div>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:shashipreetham1804@gmail.com">shashipreetham1804@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/shashi-preetham18" target="_blank">linkedin.com/in/shashi-preetham18</a></p>
+  </div>
+</section>
 
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+<button id="back-to-top">↑</button>
 
-  <!-- SCRIPTS -->
-  <script>
-    // -------------------------
-    // Particles.js configuration
-    // -------------------------
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60, density: { enable:true, value_area:800 } },
-        color: { value: "#38bdf8" },
-        shape: { type: "circle" },
-        opacity: { value: 0.75, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 140, color: "#38bdf8", opacity:0.12, width:1 },
-        move: { enable: true, speed: 2, random: false, straight: false, out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
-        modes: { repulse: { distance: 120 }, push: { particles_nb: 4 } }
-      },
-      retina_detect: true
-    });
+<!-- JS -->
+<script>
+  // Typewriter effect
+  const roles = ["Full-Stack Developer 💻","Machine Learning Enthusiast 🤖","Problem Solver 🚀"];
+  let idx = 0, char = 0, del = false;
+  const typed = document.getElementById("typed-text");
 
-    // -------------------------
-    // Typewriter (hero)
-    // -------------------------
-    const roles = ["Full-Stack Developer 💻","Machine Learning Enthusiast 🤖","Problem Solver 🚀","Open Source Contributor 🌍"];
-    let roleIndex = 0, charIndex = 0, deleting = false;
-    const typedEl = document.getElementById("typed-text");
-
-    function typeTick(){
-      const current = roles[roleIndex];
-      if(!deleting){
-        typedEl.textContent = current.slice(0, charIndex++);
-        if(charIndex > current.length){ deleting = true; setTimeout(typeTick, 1100); return; }
-      } else {
-        typedEl.textContent = current.slice(0, charIndex--);
-        if(charIndex < 0){ deleting = false; roleIndex = (roleIndex+1)%roles.length; }
-      }
-      setTimeout(typeTick, deleting ? 50 : 90);
+  function tick() {
+    let current = roles[idx];
+    if (!del) {
+      typed.textContent = current.substring(0, char++);
+      if (char > current.length) { del = true; setTimeout(tick, 1100); return; }
+    } else {
+      typed.textContent = current.substring(0, char--);
+      if (char < 0) { del = false; idx = (idx+1) % roles.length; }
     }
-    document.addEventListener("DOMContentLoaded", ()=> setTimeout(typeTick, 300));
+    setTimeout(tick, del ? 60 : 90);
+  }
+  tick();
 
-    // -------------------------
-    // GSAP: hero enters and floating shapes
-    // -------------------------
-    gsap.defaults({ ease: "power3.out" });
-    gsap.from(".hero-title", { y: -40, opacity: 0, duration: 0.9 });
-    gsap.from(".typewriter", { y: -10, opacity:0, duration:0.8, delay:0.25 });
-    gsap.from(".hero-sub", { y: 20, opacity:0, duration:0.9, delay:0.5 });
-    gsap.from(".hero-ctas .btn", { scale: 0.9, opacity:0, stagger: 0.12, delay:0.8 });
+  // Back to top
+  const topBtn = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+  });
+  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
 
-    // animate floating shapes organically
-    gsap.utils.toArray(".shape").forEach((s, i) => {
-      gsap.to(s, {
-        x: "random(-40,40)",
-        y: "random(-30,30)",
-        rotation: "random(-10,10)",
-        duration: 10 + Math.random()*6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: i*0.4
-      });
-    });
-
-    // -------------------------
-    // Project scroll reveal
-    // -------------------------
-    gsap.utils.toArray(".project-card").forEach((card, i) => {
-      gsap.from(card, {
-        y: 40, opacity: 0, duration: 0.9, delay: i*0.08,
-        scrollTrigger: { trigger: card, start: "top 92%" }
-      });
-    });
-
-    // -------------------------
-    // Hover spotlight + dim others + badge animation + click open
-    // -------------------------
-    const cards = document.querySelectorAll(".project-card");
-
-    function clearHoverStates() {
-      cards.forEach(c => {
-        c.classList.remove("hovered");
-        c.classList.remove("dimmed");
-      });
-    }
-
-    cards.forEach(card => {
-      // show badges on hover and spotlight
-      card.addEventListener("mouseenter", () => {
-        cards.forEach(other => { if(other !== card) other.classList.add("dimmed"); });
-        card.classList.add("hovered");
-
-        // animate tech badges in
-        const badges = card.querySelectorAll(".tech-stack span");
-        gsap.killTweensOf(badges);
-        gsap.set(badges, { y: 12, opacity: 0 });
-        gsap.to(badges, { y: 0, opacity: 1, stagger: 0.06, duration: 0.35, ease: "back.out(1.2)" });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        cards.forEach(other => other.classList.remove("dimmed"));
-        card.classList.remove("hovered");
-
-        // hide badges slightly
-        const badges = card.querySelectorAll(".tech-stack span");
-        gsap.to(badges, { y: 6, opacity: 0, stagger: 0.02, duration: 0.22 });
-      });
-
-      // clicking the card (except the View Code button) opens repo
-      card.addEventListener("click", (evt) => {
-        const target = evt.target;
-        if(target.closest(".btn-row") || target.tagName === "A") {
-          // let anchor buttons work normally
-          return;
-        }
-        // open repo in new tab if data-link present
-        const link = card.getAttribute("data-link");
-        if(link) window.open(link, "_blank");
-      });
-    });
-
-    // -------------------------
-    // Skills progress animation (ScrollTrigger)
-    // -------------------------
-    gsap.utils.toArray(".progress i").forEach((bar) => {
-      const target = bar.getAttribute("data-skill") || "0";
-      gsap.fromTo(bar, { width: "0%" }, {
-        width: `${target}%`,
-        duration: 1.6,
-        ease: "power3.out",
-        scrollTrigger: { trigger: bar, start: "top 85%" }
-      });
-    });
-
-    // -------------------------
-    // Back-to-top control
-    // -------------------------
-    const backEl = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      backEl.style.display = (window.scrollY > 420) ? "flex" : "none";
-    });
-    backEl.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-    // -------------------------
-    // Smooth anchor links for nav
-    // -------------------------
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        const href = a.getAttribute("href");
-        if(href.length > 1) {
-          e.preventDefault();
-          const el = document.querySelector(href);
-          if(el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
-
-    // Accessibility: make shapes hidden from assistive tech
-    document.querySelectorAll(".shape").forEach(s => s.setAttribute("aria-hidden", "true"));
-  </script>
 </body>
 </html>
