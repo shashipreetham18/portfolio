@@ -109,8 +109,8 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap:18px;
     }
-    /* ===== Featured Project ===== */
-.featured-project {
+    /* /* ===== Featured Project ===== */
+ /*.featured-project {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 26px;
@@ -145,7 +145,7 @@
   margin-top: 14px;
   display: flex;
   gap: 12px;
-}
+} */
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -280,16 +280,13 @@
     </div>
   </header>
 
-  <!-- PROJECTS -->
+<!-- PROJECTS -->
   <section id="projects" class="section">
     <div class="container">
-      <!-- <h2 class="section-title">Projects</h2> -->
-      <h2 class="section-title">Featured Projects</h2>
-
+      <h2 class="section-title">Projects</h2>
 
       <div class="projects-grid" id="projects-grid">
         <!-- Drone -->
-        <!-- <article class="project-card featured">
         <article class="project-card" data-link="https://github.com/shashipreetham18/drone_project">
           <div class="content">
             <img src="images/drone.jpg" alt="Drone Project screenshot" />
@@ -301,30 +298,9 @@
               <a class="btn btn-outline" href="https://github.com/shashipreetham18/drone_project" target="_blank" rel="noreferrer">View Code</a>
             </div>
           </div>
-        </article> -->
-        <div class="featured-project">
-  <img src="images/drone.jpg" alt="Drone Project" />
-
-  <div class="featured-content">
-    <h3>Autonomous Drone Navigation</h3>
-
-    <p><strong>Problem:</strong> Manual drone navigation is inefficient and unreliable in obstacle-dense environments.</p>
-    <p><strong>Method:</strong> Built an autonomous system using Python, ROS, and OpenCV for real-time path detection and obstacle avoidance.</p>
-    <p><strong>Impact:</strong> Enabled adaptive navigation suitable for surveillance and delivery use-cases.</p>
-
-    <div class="tech-stack">
-      <span>Python</span><span>ROS</span><span>OpenCV</span>
-    </div>
-
-    <div class="featured-buttons">
-      <a class="btn btn-outline" href="https://github.com/shashipreetham18/drone_project" target="_blank">View Code</a>
-    </div>
-  </div>
-</div>
-
-        <!-- Stock using DRL (NEW) -->
-        <!-- <article class="project-card featured">
-
+        </article>
+        
+<!-- Stock using DRL (NEW) -->
         <article class="project-card" data-link="https://github.com/shashipreetham18/Stock-using-DRL">
           <div class="content">
             <img src="images/stock_drl.jpeg" alt="Stock using DRL screenshot" />
@@ -336,30 +312,9 @@
               <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank" rel="noreferrer">View Code</a>
             </div>
           </div>
-        </article> -->
-        <div class="featured-project">
-  <img src="images/stock_drl.jpeg" alt="Stock Trading using DRL" />
+        </article>
 
-  <div class="featured-content">
-    <h3>Automated Stock Trading using Deep RL</h3>
-
-    <p><strong>Problem:</strong> Financial markets are noisy and difficult to model with rule-based strategies.</p>
-    <p><strong>Method:</strong> Built a Deep Reinforcement Learning pipeline with a custom Gym-style environment.</p>
-    <p><strong>Impact:</strong> Enabled adaptive, data-driven trading strategies.</p>
-
-    <div class="tech-stack">
-      <span>Python</span><span>Reinforcement Learning</span><span>DRL</span>
-    </div>
-
-    <div class="featured-buttons">
-      <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank">View Code</a>
-    </div>
-  </div>
-</div>
-
-
-        <!-- Anomaly Transformer -->
-        <!-- <article class="project-card featured">
+     <!-- Anomaly Transformer -->
         <article class="project-card" data-link="https://github.com/shashipreetham18/Anomaly-Transformer">
           <div class="content">
             <img src="images/anomaly.png" alt="Anomaly Transformer screenshot" />
@@ -371,28 +326,8 @@
               <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank" rel="noreferrer">View Code</a>
             </div>
           </div>
-        </article> -->
-          <div class="featured-project">
-  <img src="images/anomaly.png" alt="Anomaly Transformer" />
-
-  <div class="featured-content">
-    <h3>Transformer-Based Time-Series Anomaly Detection</h3>
-
-    <p><strong>Problem:</strong> Traditional methods fail to detect subtle anomalies in multivariate time-series.</p>
-    <p><strong>Method:</strong> Implemented a Transformer-based model in PyTorch with advanced preprocessing.</p>
-    <p><strong>Impact:</strong> Improved detection accuracy in complex sequential data.</p>
-
-    <div class="tech-stack">
-      <span>PyTorch</span><span>Transformers</span><span>Deep Learning</span>
-    </div>
-
-    <div class="featured-buttons">
-      <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank">View Code</a>
-    </div>
-  </div>
-</div>
-
-
+        </article>
+        
         <!-- Medical Chat Bot -->
         <article class="project-card" data-link="https://github.com/shashipreetham18/Medical-Chat-Bot">
           <div class="content">
@@ -435,8 +370,8 @@
           </div>
         </article>
 
-        
-        
+   
+
         
 
       </div>
