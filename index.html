@@ -109,6 +109,11 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap:18px;
     }
+    .featured {
+      border: 1px solid rgba(56,189,248,0.35);
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.15),
+      0 28px 80px rgba(2,132,199,0.25);
+   }
 
     .project-card {
       position:relative;
@@ -159,7 +164,8 @@
     .project-card.dimmed { filter: blur(2px) brightness(.75); pointer-events:none; }
 
     /* Skills */
-    .skills-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+    /* .skills-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; } */
+    .skills-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .skill-card { background: linear-gradient(180deg, rgba(20,28,45,0.7), rgba(6,12,20,0.45)); padding:14px; border-radius:12px; }
     .skill-card h4 { color:#bff0ff; margin-bottom:10px; font-size:1rem; }
     .progress { height:10px; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden; }
@@ -233,10 +239,13 @@
   <!-- PROJECTS -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <!-- <h2 class="section-title">Projects</h2> -->
+      <h2 class="section-title">Featured Projects</h2>
+
 
       <div class="projects-grid" id="projects-grid">
         <!-- Drone -->
+        <article class="project-card featured">
         <article class="project-card" data-link="https://github.com/shashipreetham18/drone_project">
           <div class="content">
             <img src="images/drone.jpg" alt="Drone Project screenshot" />
@@ -246,6 +255,36 @@
             <div class="tech-stack"><span>Python</span><span>ROS</span><span>OpenCV</span></div>
             <div class="btn-row">
               <a class="btn btn-outline" href="https://github.com/shashipreetham18/drone_project" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </div>
+        </article>
+        <!-- Stock using DRL (NEW) -->
+        <article class="project-card featured">
+
+        <article class="project-card" data-link="https://github.com/shashipreetham18/Stock-using-DRL">
+          <div class="content">
+            <img src="images/stock_drl.jpeg" alt="Stock using DRL screenshot" />
+            <h3>Stock using DRL</h3>
+            <p><strong>Problem:</strong> Building automated trading strategies that adapt to noisy market time-series.</p>
+            <p><strong>Solution:</strong> Developed a Deep Reinforcement Learning pipeline in Python to train agents for automated stock trading; includes data preprocessing, custom OpenAI‑Gym-style environment, training scripts, and evaluation utilities.</p>
+            <div class="tech-stack"><span>Python</span><span>Reinforcement Learning</span><span>DRL</span></div>
+            <div class="btn-row">
+              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank" rel="noreferrer">View Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Anomaly Transformer -->
+        <article class="project-card featured">
+        <article class="project-card" data-link="https://github.com/shashipreetham18/Anomaly-Transformer">
+          <div class="content">
+            <img src="images/anomaly.png" alt="Anomaly Transformer screenshot" />
+            <h3>Anomaly Transformer</h3>
+            <p><strong>Problem:</strong> Detecting subtle anomalies in time-series data is difficult with classic methods.</p>
+            <p><strong>Solution:</strong> Implemented an anomaly detection model using Transformer-based architecture in PyTorch to flag irregular patterns.</p>
+            <div class="tech-stack"><span>PyTorch</span><span>Deep Learning</span><span>ML</span></div>
+            <div class="btn-row">
+              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank" rel="noreferrer">View Code</a>
             </div>
           </div>
         </article>
@@ -292,33 +331,9 @@
           </div>
         </article>
 
-        <!-- Anomaly Transformer -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Anomaly-Transformer">
-          <div class="content">
-            <img src="images/anomaly.png" alt="Anomaly Transformer screenshot" />
-            <h3>Anomaly Transformer</h3>
-            <p><strong>Problem:</strong> Detecting subtle anomalies in time-series data is difficult with classic methods.</p>
-            <p><strong>Solution:</strong> Implemented an anomaly detection model using Transformer-based architecture in PyTorch to flag irregular patterns.</p>
-            <div class="tech-stack"><span>PyTorch</span><span>Deep Learning</span><span>ML</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Anomaly-Transformer" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Stock using DRL (NEW) -->
-        <article class="project-card" data-link="https://github.com/shashipreetham18/Stock-using-DRL">
-          <div class="content">
-            <img src="images/stock_drl.jpeg" alt="Stock using DRL screenshot" />
-            <h3>Stock using DRL</h3>
-            <p><strong>Problem:</strong> Building automated trading strategies that adapt to noisy market time-series.</p>
-            <p><strong>Solution:</strong> Developed a Deep Reinforcement Learning pipeline in Python to train agents for automated stock trading; includes data preprocessing, custom OpenAI‑Gym-style environment, training scripts, and evaluation utilities.</p>
-            <div class="tech-stack"><span>Python</span><span>Reinforcement Learning</span><span>DRL</span></div>
-            <div class="btn-row">
-              <a class="btn btn-outline" href="https://github.com/shashipreetham18/Stock-using-DRL" target="_blank" rel="noreferrer">View Code</a>
-            </div>
-          </div>
-        </article>
+        
+        
+        
 
       </div>
     </div>
